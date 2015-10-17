@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post   'login'  => 'sessions#create'
   
   delete 'logout' => 'sessions#destroy'
+  
+  get 'educadores' => 'educators#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
