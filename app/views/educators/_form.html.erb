@@ -1,4 +1,4 @@
-<%= form_for(@educator) do |f| %>
+<%= form_for @educator , html:{class:"form"}  do |f| %>
   <% if @educator.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@educator.errors.count, "error") %> prohibited this educator from being saved:</h2>
@@ -11,20 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label "Nome" %><br>
     <%= f.text_field :first_name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label "Sobrenome" %><br>
     <%= f.text_field :last_name %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label "Idade" %><br>
     <%= f.number_field :age %>
   </div>
-  <div class="actions">
-    <%= f.submit "Salvar" %>
-  </div>
+  <button type="submit" class="btn btn-default">Salvar</button>
   
 <% end %>
