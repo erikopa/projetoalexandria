@@ -1,4 +1,5 @@
 class EducatorsController < ApplicationController
+  before_action :require_user
   before_action :set_educator, only: [:show, :edit, :update, :destroy]
 
   # GET /educators

@@ -5,17 +5,33 @@
       
     </div>
     <div class="collapse navbar-collapse">
+    	<% if current_user  %>
     	<ul class="nav navbar-nav">
-    		<li class="dropdown">
-    			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-    				Cadastros 
-    				<span class="caret"></span>
-    			</a>
-    			<ul class="dropdown-menu">
-    				<li><a href="educators">Educadores</a></li>
-    			</ul>
-    		</li>
-    	</ul>
+    		
+	    		<li class="dropdown">
+	    			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	    				Cadastros 
+	    				<span class="caret"></span>
+	    			</a>
+	    			<ul class="dropdown-menu">
+	    				<li><a href="educators">Educadores</a></li>
+	    			</ul>
+	    		</li>
+	    </ul>		
+	    <ul class="nav navbar-nav navbar-right">
+				<li><a><%= current_user.email %></a></li> 
+				<li><%= link_to "Sair", logout_path, method: "delete" %></li>
+		
+			<% else %>
+		<ul class="nav navbar-nav navbar-right">		
+				<li><%= link_to "Entrar", 'login' %></a></li>
+				<!--<li><%= link_to "Cadastrar", 'signup' %></a></li>
+					-->
+				
+			<% end %>
+			<li><a href="#">Ajuda</a></li>
+		</ul>
+    	
     	
     </div>
   </div>
