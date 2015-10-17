@@ -1,0 +1,30 @@
+<%= form_for(@educator) do |f| %>
+  <% if @educator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@educator.errors.count, "error") %> prohibited this educator from being saved:</h2>
+
+      <ul>
+      <% @educator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nome" %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Sobrenome" %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label "Idade" %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Salvar" %>
+  </div>
+  
+<% end %>
